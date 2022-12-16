@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins";
+}
+
+.tablero {
+    margin-left: 150px;
+}
+
+.container {
+  display: table-cell;
+  padding: 10px;
+}
+
+.card {
+  transition: 0.1s;
+}
+
+.card:hover {
+  font-style: italic;
+}
+
+.titulo {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

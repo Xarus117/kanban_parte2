@@ -1,0 +1,25 @@
+<div class="item">
+  <div class="titulo">
+    {{ tarea.titulo }}
+  </div>
+  <br />
+  <div *ngIf="tarea.img">
+    <img class="imagen" src="{{ tarea.img }}" /> <br />
+  </div>
+  <div class="usuario" *ngFor="let usuario of tarea.usuarios">
+    <br />
+    <img
+      matTooltip="{{ usuario.nick }}"
+      class="imagen-user"
+      src="{{ usuario.img }}"
+    />
+  </div>
+  <br />
+  <div *ngIf="tarea.fechaFin != null">
+    <div [ngClass]="[substringFechas(tarea.lista, tarea.fechaFin)]">
+      <div>
+        {{ DateString(tarea.fechaFin) }}
+      </div>
+    </div>
+  </div>
+</div>

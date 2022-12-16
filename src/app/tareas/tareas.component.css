@@ -1,0 +1,84 @@
+.item {
+  background-color: #fff193;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  border: solid black 2px;
+  box-shadow: 1px 1px 3px;
+}
+
+.imagen-user {
+  height: 50px;
+  width: 50px;
+  box-shadow: 1px 1px 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+}
+
+.usuario {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.imagen {
+  height: 150px;
+  width: auto;
+  box-shadow: 1px 1px 5px;
+}
+
+.titulo {
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.288);
+  border-radius: 50px;
+  text-align: center;
+}
+
+.todo {
+  margin-right: 40px;
+}
+
+.blue {
+  color: blue;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50px;
+  margin-right: 350px;
+}
+
+.green {
+  color: green;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50px;
+  margin-right: 350px;
+}
+
+.grey {
+  color: grey;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50px;
+  margin-right: 350px;
+}
+
+.red {
+  color: red;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50px;
+  margin-right: 350px;
+}
+
+.orange {
+  color: orange;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50px;
+  margin-right: 350px;
+}
+
+.vacio {
+}

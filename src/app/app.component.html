@@ -1,0 +1,36 @@
+<div class="tablero">
+  <div class="container" *ngFor="let lista of listas">
+    <div *ngIf="Xcambiar">
+      <div class="titulo">
+        {{ lista }}
+      </div>
+      <br />
+      <div class="card" *ngFor="let tarea of tareas; index as i">
+        <app-tareas
+          (click)="editarTarea(tarea)"
+          *ngIf="tarea.lista == lista"
+          [tarea]="tareas[i]"
+        ></app-tareas>
+      </div>
+    </div>
+    <button
+      mat-button
+      color="primary"
+      *ngIf="Xcambiar"
+      (click)="cambiar(false, lista, false)"
+    >
+      Añadir Tarea...
+    </button>
+  </div>
+</div>
+<br />
+
+<app-tarea-form
+  *ngIf="!Xcambiar"
+  (cancelarTarea)="cambiar($event)"
+  (guardarTarea)="crearNuevaTarea($event)"
+  [tarea]="tareaCache"
+  [lista]="lista"
+  [editando]="editando"
+  (editGuardado)="eliminarOriginal($event)"
+></app-tarea-form>

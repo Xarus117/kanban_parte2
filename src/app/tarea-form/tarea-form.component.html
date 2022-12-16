@@ -1,0 +1,79 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Datos tarea:</mat-card-title>
+  </mat-card-header>
+  <br />
+  <form
+    class="form"
+    [formGroup]="nuevaTarea"
+    (ngSubmit)="onClickSubmit(nuevaTarea.value)"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>Titulo</mat-label>
+      <input matInput formControlName="titulo" required />
+      <mat-error *ngIf="nuevaTarea.invalid">Título inválido</mat-error>
+    </mat-form-field>
+    <br /><br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="lista" required>
+        <mat-option value="Pendientes">PENDIENTES</mat-option>
+        <mat-option value="Progreso">PROGRESO</mat-option>
+        <mat-option value="Finalizadas">FINALIZADAS</mat-option>
+      </mat-select>
+      <mat-error *ngIf="nuevaTarea.invalid"
+        >Estado inválido</mat-error
+      > </mat-form-field
+    ><br /><br />
+
+    <mat-form-field appearance="fill">
+      <input matInput [matDatepicker]="picker" formControlName="fechaFin" />
+      <mat-hint>Mes / Día / Año</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker> </mat-form-field
+    ><br /><br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>URL</mat-label>
+      <input matInput formControlName="img" /> </mat-form-field
+    ><br />
+
+    <button type="button" mat-fab (click)="mostrarUsuario()">+</button>
+
+    <br /><br />
+
+    <div class="usuario" *ngFor="let usuario of arrayUsuarios; index as i">
+      <img
+        (click)="borrarUsuario(usuario)"
+        *ngIf="arrayVisibilidad[i] == true"
+        matTooltip="{{ usuario.nick }}"
+        class="imagen-user"
+        src="{{ usuario.img }}"
+      />
+    </div>
+    <br />
+
+    <button
+      [disabled]="!nuevaTarea.valid"
+      type="submit"
+      mat-raised-button
+      color="primary"
+    >
+      Guardar
+    </button>
+    <br /><br />
+
+    <button
+      type="button"
+      (click)="cancelarTareaEstado()"
+      mat-raised-button
+      color="warn"
+    >
+      Eliminar
+    </button>
+  </form>
+</mat-card>
